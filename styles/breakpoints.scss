@@ -17,6 +17,18 @@
 			.row {
 				width: 48%;
 			}
+			.gallery-item{
+				&:hover {
+					.description {
+						height: 200px;
+					}
+				}
+				.description {
+					p {
+						-webkit-line-clamp: 8;
+					}
+				}
+			}
 		}
 	}
 	.columns {
