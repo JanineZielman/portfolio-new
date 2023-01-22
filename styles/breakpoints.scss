@@ -1,0 +1,34 @@
+@media only screen and (max-width: 1400px) {
+	.gallery-page {
+		.gallery-grid {
+			.row {
+				width: 30%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.gallery-page {
+		.gallery-grid {
+			.row {
+				width: 48%;
+			}
+		}
+	}
+	.columns {
+		column-count: 1;
+		column-gap: 0;
+	}
+	.top-info {
+		flex-direction: column;
+		margin-top: 24px;
+		.columns {
+			width: 100%;
+		}
+		.links {
+			width: 100%;
+			text-align: left;
+		}
+	}
+}

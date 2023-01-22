@@ -1,0 +1,24 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "article"
+  },
+  "filters": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "filter",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "passage",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+}
