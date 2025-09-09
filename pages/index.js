@@ -1,17 +1,17 @@
 import Head from "next/head";
-// import { PrismicLink, PrismicRichText } from "@prismicio/react";
+import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
-// import Gallery from "../components/Gallery";
+import Gallery from "../components/Gallery";
 
-const Index = ({ page, settings }) => {
-  // console.log(page)
+const Index = ({ page, settings, projects }) => {
+  console.log(page)
   return (
     <Layout settings={settings}>
       <Head>
         <title>{page.data.title}</title>
       </Head>
-      {/* <div className="top-info">
+      <div className="top-info">
         <div className="columns">
           <PrismicRichText field={page.data.info}/>
         </div>
@@ -24,8 +24,8 @@ const Index = ({ page, settings }) => {
             )
           })}
         </div>
-      </div> */}
-      {/* <Gallery page={page} projects={projects}/> */}
+      </div>
+      <Gallery page={page} projects={projects}/>
     </Layout>
   );
 };
@@ -37,19 +37,19 @@ export async function getStaticProps({ locale, previewData }) {
 
   const page = await client.getSingle("home", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
-  // const projects = await client.getAllByType("project", { 
-  //   lang: locale,
-  //   orderings: {
-	// 		field: 'my.project.year',
-	// 		direction: 'desc',
-	// 	},
-  // });
+  const projects = await client.getAllByType("project", { 
+    lang: locale,
+    orderings: {
+			field: 'my.project.year',
+			direction: 'desc',
+		},
+  });
 
   return {
     props: {
       page,
       settings,
-      // projects,
+      projects,
     },
   };
 }
