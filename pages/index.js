@@ -25,7 +25,7 @@ const Index = ({ page, settings, projects }) => {
           })}
         </div>
       </div>
-      <Gallery page={page} projects={projects}/>
+      {/* <Gallery page={page} projects={projects}/> */}
     </Layout>
   );
 };
